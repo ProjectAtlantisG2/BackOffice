@@ -23,12 +23,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement("INSERT INTO employee(name) VALUES(?);");
             preparedStatement.setString(1, employee.getName());
-    
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
     @Override
     public void update(Employee employee) {
@@ -37,16 +35,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
         try {
             connexion = daoFactory.getConnection();
-            
             preparedStatement = connexion.prepareStatement("UPDATE `employee` SET `name`=\""+ employee.getName() +"\" WHERE id =\""+ employee.getId() +"\";");
             preparedStatement.executeUpdate();
             }
- 
-           
+  
         catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -64,12 +59,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
             while (resultat.next()) {
                 int id = resultat.getInt("id");
                 String name = resultat.getString("name");
-                
-
+               
                 Employee employee = new Employee();
                 employee.setName(name);
                 employee.setId(id);
-
                 employees.add(employee);
             }
         } catch (SQLException e) {
@@ -77,8 +70,23 @@ public class EmployeeDaoImpl implements EmployeeDao {
         }
         return employees;
     }
+    
+    @Override
+    public void delete(Employee employee) {
+        Connection connexion = null;
+        PreparedStatement preparedStatement = null;
 
-   @Override
+        try {
+            connexion = daoFactory.getConnection();
+            preparedStatement = connexion.prepareStatement("DELETE FROM `employee`  WHERE id =\""+ employee.getId() +"\";");
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public Employee find(int id) {
         Connection connexion = null;
         Employee employee = new Employee();
@@ -92,16 +100,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
             while (resultat.next()) {
                 String name = resultat.getString("name");
-
-                
                 employee.setName(name);
                 employee.setId(id);
-     
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return employee;
     }
-
 }

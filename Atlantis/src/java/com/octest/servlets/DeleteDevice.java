@@ -10,25 +10,31 @@ import javax.servlet.http.HttpSession;
 
 import com.octest.beans.Device;
 import com.octest.dao.*;
+import static com.octest.filters.RestrictionFilter.ATT_SESSION_USER;
 
 public class DeleteDevice extends HttpServlet {
     
     private DeviceDao deviceDao;
     
+    @Override
     public void init() throws ServletException {
         DaoFactory daoFactory = DaoFactory.getInstance();
         this.deviceDao = daoFactory.getDeviceDao();
     }
  
+    @Override
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Récupération et destruction de la session en cours */
-        
-        if (request.getParameter("id") != null){
-            int id = Integer.parseInt(request.getParameter("id"));
-            Device device =  deviceDao.find(id);
-            deviceDao.delete(device);
+        HttpSession session = request.getSession();
+        if ( session.getAttribute( ATT_SESSION_USER ) == null ) {
+            response.sendRedirect("/AtlantisBackOffice/connexion");
+        } else {
+            if (request.getParameter("id") != null){
+                int id = Integer.parseInt(request.getParameter("id"));
+                Device device =  deviceDao.find(id);
+                deviceDao.delete(device);
+            }
+            response.sendRedirect("/AtlantisBackOffice/devicesList");
         }
-       
-          response.sendRedirect("/AtlantisBackOffice/devicesList");
     }
 }

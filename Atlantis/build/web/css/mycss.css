@@ -357,4 +357,17 @@ label:hover:before {
 }
 .atlantis-title{
     margin-left: 5%;
+    display: inline-block!important;
+}
+.btn-add{
+    float: right;
+}
+.btn-disconnect{
+    float: right;
+    margin-top: 5px;
+    margin-right: 20px; 
+}
+
+.box-menu{
+    display: block!important;
 }

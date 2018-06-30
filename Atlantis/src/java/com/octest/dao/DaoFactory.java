@@ -21,7 +21,6 @@ public class DaoFactory {
         } catch (ClassNotFoundException e) {
 
         }
-
         DaoFactory instance = new DaoFactory(
                 "jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
         return instance;
@@ -38,5 +37,9 @@ public class DaoFactory {
     
     public EmployeeDao getEmployeeDao() {
         return new EmployeeDaoImpl(this);
+    }
+    
+    public UserDao getUserDao() {
+        return new UserDaoImpl(this);
     }
 }

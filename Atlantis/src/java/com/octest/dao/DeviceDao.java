@@ -9,5 +9,6 @@ public interface DeviceDao {
     void update( Device device );
     void delete( Device device );
     List<Device> lister();
+    List<Device> findByEmployee(int id);
     Device find( int id );
 }

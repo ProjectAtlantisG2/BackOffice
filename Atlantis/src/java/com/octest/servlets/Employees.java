@@ -1,13 +1,6 @@
 package com.octest.servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.octest.beans.Employee;
 import com.octest.dao.*;
+import static com.octest.filters.RestrictionFilter.ATT_SESSION_USER;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Devices
@@ -26,25 +21,30 @@ public class Employees extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private EmployeeDao employeeDao;
     
+    @Override
     public void init() throws ServletException {
         DaoFactory daoFactory = DaoFactory.getInstance();
         this.employeeDao = daoFactory.getEmployeeDao();
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+        HttpSession session = request.getSession();
+        if ( session.getAttribute( ATT_SESSION_USER ) == null ) {
+            response.sendRedirect("/AtlantisBackOffice/connexion");
+        } else {
         if (request.getParameter("id") != null){
             int id = Integer.parseInt(request.getParameter("id"));
-            request.setAttribute("employee", employeeDao.find(id));
-            
+            request.setAttribute("employee", employeeDao.find(id)); 
         }
         else{
             request.setAttribute("employee",new Employee());
         }
-        
         this.getServletContext().getRequestDispatcher("/employee.jsp").forward(request, response);
+        }
     }
 
+    @Override
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         
         if (request.getParameter("id") != null){
@@ -52,23 +52,15 @@ public class Employees extends HttpServlet {
             Employee employee =  employeeDao.find(id);
             employee.setId(id);
             employee.setName(request.getParameter("name"));
-    
-            employeeDao.update(employee);
-           
+            employeeDao.update(employee);  
         } 
         else {
             Employee employee = new Employee();
-            employee.setName(request.getParameter("name"));
-            
-            employeeDao.add(employee);
-            
+            employee.setName(request.getParameter("name")); 
+            employeeDao.add(employee);   
         }
         response.sendRedirect("/AtlantisBackOffice/EmployeesList");
-        
         //request.setAttribute("device", deviceDao.getDevice(id));
         //this.getServletContext().getRequestDispatcher("/device.jsp").forward(request, response);
     }
-    
-    
-
 }

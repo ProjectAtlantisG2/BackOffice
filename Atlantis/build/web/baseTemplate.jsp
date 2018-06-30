@@ -1,26 +1,13 @@
-<%-- 
-    Document   : headerTemplate
-    Created on : 27 juin 2018, 17:19:34
-    Author     : Ollocip
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<header>
-          
-<div class="navbar navbar-dark bg-dark box-shadow">
-   
-  
-     <button class="navbar-toggler" type="button" onclick="menuExpand()" data-target="#menuLeftExpand" aria-controls="menuLeft" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a href="#" class="navbar-brand d-flex align-items-center atlantis-title">
-      <strong>Atlantis</strong>
-    </a>
-  
-   
-    
-</div>
-   
+<header>       
+    <div class="navbar navbar-dark bg-dark box-shadow box-menu">
+        <a href="${pageContext.request.contextPath}/devicesList" class="navbar-brand d-flex align-items-center atlantis-title">
+            <strong>Atlantis</strong>
+        </a>
+        <a href="${pageContext.request.contextPath}/disconnect">
+            <img class="btn-disconnect" align="right" src="white-shutdown-32.png">
+        </a>
+    </div>
 </header>
 
