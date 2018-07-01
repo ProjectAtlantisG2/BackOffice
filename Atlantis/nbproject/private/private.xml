@@ -3,7 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/index.xhtml</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/dao/UserDao.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/menu.jsp</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/employee.jsp</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/device.jsp</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/devicesList.jsp</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/employeesList.jsp</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/beans/Employee.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/dao/EmployeeDao.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/DevicesList.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/Employees.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/beans/User.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/dao/DeviceDao.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/Devices.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/css/mycss.css</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/dao/UserDaoImpl.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/dao/DaoFactory.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/DeleteEmployee.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/dao/EmployeeDaoImpl.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/EmployeesList.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/login.jsp</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/web/baseTemplate.jsp</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/hashtool/PasswordUtils.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/DeleteDevice.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/dao/DeviceDaoImpl.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/beans/Device.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/Connection.java</file>
+            <file>file:/C:/Users/Ollocip/Documents/NetBeansProjects/Atlantis/src/java/com/octest/servlets/Disconnect.java</file>
         </group>
     </open-files>
 </project-private>

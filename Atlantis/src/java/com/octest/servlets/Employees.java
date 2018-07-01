@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.octest.beans.Employee;
 import com.octest.dao.*;
-import static com.octest.filters.RestrictionFilter.ATT_SESSION_USER;
+import static com.octest.servlets.Connection.ATT_SESSION_USER;
 import javax.servlet.http.HttpSession;
 
 /**

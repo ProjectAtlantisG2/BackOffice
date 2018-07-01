@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.octest.beans.Employee;
 import com.octest.dao.*;
-import static com.octest.filters.RestrictionFilter.ATT_SESSION_USER;
+import static com.octest.servlets.Connection.ATT_SESSION_USER;
 import java.util.ArrayList;
 import java.util.List;
 
