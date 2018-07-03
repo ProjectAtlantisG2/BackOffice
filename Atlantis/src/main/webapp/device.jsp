@@ -45,7 +45,7 @@
                                     <select class="selectpicker" data-show-subtext="true" data-live-search="true" name="idEmployee" id="idEmployee">
                                         <c:choose><c:when test="${device.idEmployee != null}"><option value="${device.idEmployee}@${device.employee}">${device.employee}</option></c:when><c:otherwise><option value="">No employee</option></c:otherwise>   </c:choose>
                                         <c:forEach var="employee" items="${ employees }">
-                                            <c:if test="${device.idEmployee != employee.id}"><option value="${employee.id}@${employee.name}">${employee.name}</option></c:if>              
+                                            <c:if test="${device.idEmployee != employee.id}"><option value="${employee.id}@${employee.lastName} ${employee.firstName}">${employee.lastName} ${employee.firstName}</option></c:if>              
                                         </c:forEach>
                                     </select> 
                                 </div>

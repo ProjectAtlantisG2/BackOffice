@@ -29,7 +29,7 @@ public class MongoDBEmployeeDAO {
 	private DBCollection col;
 
 	public MongoDBEmployeeDAO(MongoClient mongo) {
-		this.col = mongo.getDB("Atlantis").getCollection("employee");
+		this.col = mongo.getDB("test").getCollection("employee");
 	}
 
 	public Employee createEmployee(Employee e) {
@@ -60,7 +60,7 @@ public class MongoDBEmployeeDAO {
         public List<Employee> findByName(String name, String id) {
 		List<Employee> data = new ArrayList<Employee>();
                 BasicDBObject query = new BasicDBObject();
-                query.put("name", name);
+                query.put("lastName", name);
 		DBCursor cursor = col.find(query);
 		while (cursor.hasNext()) {
 			DBObject doc = cursor.next();

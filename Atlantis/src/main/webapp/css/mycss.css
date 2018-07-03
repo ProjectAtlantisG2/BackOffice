@@ -293,7 +293,7 @@ label:hover:before {
 }
 #menuLeftExpand{
     background-color: #506674!important;
-    height: -webkit-fill-available;
+    height: 92.7vh;
 }
 .table-devices{
     position: relative;
@@ -374,3 +374,4 @@ label:hover:before {
 .selectpicker{
     display : none!important;
 }
+

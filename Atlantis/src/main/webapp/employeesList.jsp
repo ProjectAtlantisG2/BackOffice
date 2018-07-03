@@ -23,7 +23,8 @@
                         <table class="table table-striped table-sm">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Last Name</th>
+                                    <th>First Name</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
@@ -31,9 +32,10 @@
                             <tbody>
                                 <c:forEach var="employee" items="${ employees }">
                                 <tr>
-                                    <td>${employee.name}</td>
-                                    <td><a href="${pageContext.request.contextPath}/employee?id=${employee.id}&name=${employee.name}">Edit</a></td>
-                                    <td><a href="${pageContext.request.contextPath}/deleteEmployee?id=${employee.id}&name=${employee.name}">Delete</a></td>
+                                    <td>${employee.lastName}</td>
+                                    <td>${employee.firstName}</td>
+                                    <td><a href="${pageContext.request.contextPath}/employee?id=${employee.id}&lastName=${employee.lastName}">Edit</a></td>
+                                    <td><a href="${pageContext.request.contextPath}/deleteEmployee?id=${employee.id}&lastName=${employee.lastName}">Delete</a></td>
                                 </tr>
                                 </c:forEach>
                             </tbody>

@@ -18,7 +18,7 @@ public class EmployeeConverter {
 	public static DBObject toDBObject(Employee e) {
 
 		BasicDBObjectBuilder builder = BasicDBObjectBuilder.start()
-				.append("name", e.getName());
+				.append("lastName", e.getLastName()).append("firstName", e.getFirstName());
 		if (e.getId() != null)
 			builder = builder.append("_id", new ObjectId(e.getId()));
 		return builder.get();
@@ -28,7 +28,8 @@ public class EmployeeConverter {
 	// take special note of converting ObjectId to String
 	public static Employee toEmployee(DBObject doc) {
 		Employee e = new Employee();
-		e.setName((String) doc.get("name"));
+		e.setLastName((String) doc.get("lastName"));
+                e.setFirstName((String) doc.get("firstName"));
 		ObjectId id = (ObjectId) doc.get("_id");
 		e.setId(id.toString());
 		return e;

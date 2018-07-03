@@ -9,7 +9,7 @@
     </context-param>
     <context-param>
         <param-name>MONGODB_HOST</param-name>
-        <param-value>localhost</param-value>
+        <param-value>192.168.192.241</param-value>
     </context-param>
     <context-param>
         <param-name>MONGODB_PORT</param-name>

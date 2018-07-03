@@ -37,8 +37,10 @@ public class Employees extends HttpServlet {
         if (request.getParameter("id") != null){
              MongoClient mongo = (MongoClient) request.getServletContext()
 					.getAttribute("MONGO_CLIENT");
+            String name = request.getParameter("lastName");
+            String id = request.getParameter("id");
             MongoDBEmployeeDAO employeeDAO = new MongoDBEmployeeDAO(mongo);
-            List<Employee> employees = employeeDAO.findByName(request.getParameter("name"), request.getParameter("id"));
+            List<Employee> employees = employeeDAO.findByName(name, id);
             request.setAttribute("employees", employees);
 
         }
@@ -61,13 +63,15 @@ public class Employees extends HttpServlet {
             MongoDBEmployeeDAO employeeDAO = new MongoDBEmployeeDAO(mongo);
             List<Employee> employees  = employeeDAO.findByName(name,id);
             for(Employee employee : employees) {
-                employee.setName(request.getParameter("name"));
+                employee.setLastName(request.getParameter("lastName"));
+                employee.setFirstName(request.getParameter("firstName"));
                 employeeDAO.updateEmployee(employee);
             }
         } 
         else {
             Employee employee = new Employee();
-            employee.setName(request.getParameter("name")); 
+            employee.setLastName(request.getParameter("lastName")); 
+            employee.setFirstName(request.getParameter("firstName")); 
             MongoDBEmployeeDAO employeeDAO = new MongoDBEmployeeDAO(mongo);
             employeeDAO.createEmployee(employee);
         }

@@ -29,7 +29,7 @@ public class MongoDBDeviceDAO {
 	private DBCollection col;
 
 	public MongoDBDeviceDAO(MongoClient mongo) {
-		this.col = mongo.getDB("Atlantis").getCollection("device");
+		this.col = mongo.getDB("test").getCollection("device");
 	}
 
 	public Device createDevice(Device d) {

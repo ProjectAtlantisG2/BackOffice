@@ -29,7 +29,7 @@ public class DeleteEmployee extends HttpServlet {
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String id = request.getParameter("id");
-        String name = request.getParameter("name");
+        String name = request.getParameter("lastName");
         
         MongoClient mongo = (MongoClient) request.getServletContext()
 					.getAttribute("MONGO_CLIENT");

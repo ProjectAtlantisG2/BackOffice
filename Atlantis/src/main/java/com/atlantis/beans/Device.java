@@ -1,4 +1,7 @@
 package com.atlantis.beans;
+
+import java.util.UUID;
+
 /**
  *
  * @author Ollocip
@@ -10,6 +13,7 @@ public class Device {
     private String macAddress;
     private String employee;
     private String idEmployee;
+    private String uuid;
     
     public String getId(){
         return id;
@@ -33,6 +37,14 @@ public class Device {
     
     public void setEmployee(String employee) {
             this.employee = employee;
+    }
+    
+    public String getUuid() {
+		return uuid;
+    }
+    
+    public void setUuid(String uuid) {
+            this.uuid = uuid;
     }
     
     public String getName(){

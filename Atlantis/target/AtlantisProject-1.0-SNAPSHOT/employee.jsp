@@ -18,13 +18,20 @@
             <div class="row">
                 <%@include file="menu.jsp" %>
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                    <form class="needs-validation" novalidate  method="post" action="employee<c:forEach var="employee" items="${ employees }"><c:if test="${employee.id != 0}" >?id=${employee.id }&nameEmployee=${employee.name }  </c:if></c:forEach>">
+                    <form class="needs-validation" novalidate  method="post" action="employee<c:forEach var="employee" items="${ employees }"><c:if test="${employee.id != 0}" >?id=${employee.id }&nameEmployee=${employee.lastName }  </c:if></c:forEach>">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="firstName">Name</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="" value=" <c:forEach var="employee" items="${ employees }">${employee.name}</c:forEach>" required>
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value=" <c:forEach var="employee" items="${ employees }">${employee.lastName}</c:forEach>" required>
                                 <div class="invalid-feedback">
-                                    Valid first name is required.
+                                    Valid Last name is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value=" <c:forEach var="employee" items="${ employees }">${employee.firstName}</c:forEach>" required>
+                                <div class="invalid-feedback">
+                                    Valid first name name is required.
                                 </div>
                             </div>
                                 

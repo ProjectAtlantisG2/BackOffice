@@ -27,7 +27,7 @@ public class MongoDBUserDAO {
 	private DBCollection col;
 
 	public MongoDBUserDAO(MongoClient mongo) {
-		this.col = mongo.getDB("Atlantis").getCollection("user");
+		this.col = mongo.getDB("test").getCollection("user");
 	}
 
 	public User createPerson(User u) {
